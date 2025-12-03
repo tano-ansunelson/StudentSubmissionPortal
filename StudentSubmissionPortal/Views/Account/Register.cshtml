@@ -139,6 +139,7 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <!-- RIGHT SIDE IMAGE PANEL -->
     <div class="flex-fill d-none d-md-block">
         <img src="images/cappp.jpg"
@@ -146,10 +147,46 @@
              style="object-fit: cover; object-position: center; filter: brightness(88%);"
              alt="Registration Image">
     </div>
+=======
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" id="Password" name="Password" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Role">Role</label>
+            <select id="Role" name="Role" required onchange="toggleClassSelector()">
+                <option value="">Select your role</option>
+                <option value="Student">Student</option>
+                <option value="Supervisor">Supervisor</option>
+            </select>
+        </div>
+
+        <!-- CLASS SELECTION (Hidden by default) -->
+        <div class="form-group" id="classSelector" style="display:none;">
+            <label for="ClassId">Select Class</label>
+            <select id="ClassId" name="ClassId">
+                <option value="">Select class</option>
+                <option value="1">Form 1</option>
+                <option value="2">Form 2</option>
+                <option value="3">Form 3</option>
+            </select>
+        </div>
+
+        <button type="submit">Create Account</button>
+
+    </form>
+
+    <p class="login-link">
+        Already have an account?
+        <a asp-controller="Account" asp-action="Login">Login</a>
+    </p>
+>>>>>>> c29a1e1c0981686cd2846fdff4763b21d8d03137
 </div>
 
 <script>
     function toggleClassSelector() {
+<<<<<<< HEAD
       const roleEl = document.getElementById('Role');
       const classSection = document.getElementById('classSelector');
       const role = roleEl ? roleEl.value : '';
@@ -159,4 +196,15 @@
     document.addEventListener('DOMContentLoaded', function () {
       toggleClassSelector();
     });
+=======
+        let role = document.getElementById("Role").value;
+        let classSelector = document.getElementById("classSelector");
+
+        if (role === "Student") {
+            classSelector.style.display = "block";
+        } else {
+            classSelector.style.display = "none";
+        }
+    }
+>>>>>>> c29a1e1c0981686cd2846fdff4763b21d8d03137
 </script>
