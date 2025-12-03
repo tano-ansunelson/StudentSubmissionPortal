@@ -6,10 +6,10 @@
         new {
             Project = "Blockchain for Supply Chain",
             Status = "Submitted",
-            StatusType = "success",   // Bootstrap color
+            StatusType = "success",
             DateSubmitted = "2025-04-18",
             Grade = "Pending",
-            GradeColor = "text-muted", // italic
+            GradeColor = "text-warning fw-semibold fst-italic",
             HasFile = true
         },
         new {
@@ -18,20 +18,28 @@
             StatusType = "danger",
             DateSubmitted = "2025-05-16",
             Grade = "B+",
-            GradeColor = "text-primary fw-bold",
+            GradeColor = "text-info fw-bold",
             HasFile = true
         }
     };
 }
 
+<!-- MAIN CONTAINER -->
 <div class="container py-5">
 
-    <h3 class="fw-bold mb-4">My Submissions History</h3>
+    <!-- PAGE TITLE -->
+    <div class="mb-4">
+        <h2 class="fw-bold text-light">My Submissions History</h2>
+        <p class="text-secondary">View all project submissions and their grading progress</p>
+    </div>
 
-    <div class="card shadow-sm border-0">
+    <!-- CARD WRAPPER -->
+    <div class="card bg-dark border-0 shadow-lg rounded-4 overflow-hidden">
+
         <div class="table-responsive">
-            <table class="table align-middle mb-0">
-                <thead class="table-light">
+            <table class="table table-dark table-hover align-middle mb-0">
+
+                <thead class="bg-secondary text-light">
                     <tr>
                         <th>Project</th>
                         <th>Status</th>
@@ -45,7 +53,7 @@
                     @foreach (var item in submissions)
                     {
                         <tr>
-                            <td>@item.Project</td>
+                            <td class="fw-semibold">@item.Project</td>
 
                             <td>
                                 <span class="badge bg-@item.StatusType px-3 py-2">
@@ -55,15 +63,14 @@
 
                             <td>@item.DateSubmitted</td>
 
-                            <td class="@item.GradeColor">
-                                @item.Grade
-                            </td>
+                            <td class="@item.GradeColor">@item.Grade</td>
 
                             <td class="text-end">
                                 @if (item.HasFile)
                                 {
-                                    <a href="#" class="text-decoration-none fs-5">
-                                        <i class="bi bi-download">Download</i>
+                                    <a href="#" class="btn btn-sm btn-outline-info d-inline-flex align-items-center gap-2">
+                                        <i class="bi bi-download"></i>
+                                      
                                     </a>
                                 }
                             </td>
