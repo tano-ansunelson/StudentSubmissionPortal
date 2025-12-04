@@ -10,7 +10,7 @@ namespace StudentSubmissionPortal.Data
             : base(options)
         {
         }
-
+        public DbSet<IdentityUser> Users { get; set; }
         // Add your tables here
         public DbSet<Class> Classes { get; set; }
        
@@ -19,7 +19,7 @@ namespace StudentSubmissionPortal.Data
         public DbSet<Project> Projects { get; set; }
 
         public DbSet<Submission> Submissions { get; set; }
-        public 
+        
 
         // public DbSet<StudentProject> StudentProjects { get; set; }
     }
