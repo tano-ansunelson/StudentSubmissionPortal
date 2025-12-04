@@ -14,10 +14,10 @@ namespace StudentSubmissionPortal.Models
         public int ClassId { get; set; } // Foreign key to Class entity   
         public  Class Class { get; set; }
 
+        public List<Submission> Submissions { get; set; }
 
 
 
 
-
-}
+    }
 }

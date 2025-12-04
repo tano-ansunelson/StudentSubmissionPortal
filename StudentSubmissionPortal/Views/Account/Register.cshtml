@@ -109,10 +109,21 @@
 
         <div class="form-group">
             <label for="Role">Role</label>
-            <select id="Role" name="Role" required>
+            <select id="Role" name="Role" required onchange="toggleClassSelector()">
                 <option value="">Select your role</option>
                 <option value="Student">Student</option>
                 <option value="Supervisor">Supervisor</option>
+            </select>
+        </div>
+
+        <!-- CLASS SELECTION (Hidden by default) -->
+        <div class="form-group" id="classSelector" style="display:none;">
+            <label for="ClassId">Select Class</label>
+            <select id="ClassId" name="ClassId">
+                <option value="">Select class</option>
+                <option value="1">Form 1</option>
+                <option value="2">Form 2</option>
+                <option value="3">Form 3</option>
             </select>
         </div>
 
@@ -125,3 +136,16 @@
         <a asp-controller="Account" asp-action="Login">Login</a>
     </p>
 </div>
+
+<script>
+    function toggleClassSelector() {
+        let role = document.getElementById("Role").value;
+        let classSelector = document.getElementById("classSelector");
+
+        if (role === "Student") {
+            classSelector.style.display = "block";
+        } else {
+            classSelector.style.display = "none";
+        }
+    }
+</script>
